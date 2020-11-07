@@ -76,3 +76,12 @@ skuOne = Sku.create(
     product_option_id: opOne.id,
     product_option_value_id: opValOne.id,
 )
+
+orderOne = Order.create(
+    user_id: jd.id
+)
+
+ProductOrder.create(
+    sku_id: skuOne.id,
+    order_id: orderOne.id
+)
