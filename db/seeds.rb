@@ -175,7 +175,7 @@ def create_tvs()
         }
     ] 
     
-    phones.each do |product|
+    tvs.each do |product|
         option = ProductOption.create(
             name: "size",
             product_id: product.id
