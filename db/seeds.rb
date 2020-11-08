@@ -232,4 +232,5 @@ def create_harddrives(product_array)
 end 
 
 create_phones()
+create_tvs()
 create_harddrives(harddrive_array)
