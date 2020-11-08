@@ -1,10 +1,10 @@
 ProductOrder.destroy_all
 Order.destroy_all
 User.destroy_all
-Sku.destroy_all 
-ProductOptionValue.destroy_all 
-ProductOption.destroy_all 
-Product.destroy_all 
+Sku.destroy_all
+ProductOptionValue.destroy_all
+ProductOption.destroy_all
+Product.destroy_all
 
 
 jd = User.create(
@@ -30,9 +30,9 @@ phoneOne = Product.create(
     name: 'iphone 12',
     rating: 3.5,
     category: 'phone',
-    frontimg: '',
-    sideimg: '',
-    backimg: '',
+    frontimg: 'https://www.imore.com/sites/imore.com/files/styles/w830/public/field/image/2020/10/apple_iphone-12_new-design_10132020.jpg',
+    sideimg: 'https://uswitch-mobiles-contentful.imgix.net/qhi9fkhtpbo3/5Ph3M5z61xc6Qtw116dtoa/d6c299cb0d1d96eadfbf6a9919f73c98/iphone12_side.png?w=770',
+    backimg: 'https://uswitch-mobiles-contentful.imgix.net/qhi9fkhtpbo3/2M5BYD1pPZ1eSwWyiaCITg/b70bfc4c32347df9b07dd93b9dee6a4a/iphone12_back.png?w=770',
     brand: 'apple',
     additional_specs: 'apple stuff and things, whole bunch of stuff about apples'
 )
