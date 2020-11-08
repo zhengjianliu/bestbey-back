@@ -68,16 +68,6 @@ opTwo = ProductOption.create(
     product_id: phoneOne.id
 )
 
-# opThree = ProductOption.create(
-#     name: 'storage',
-#     product_id: usbOne.id
-# )
-
-# opFour = ProductOption.create(
-#     name: 'storage',
-#     product_id: usbTwo.id
-# )
-
 opValOne = ProductOptionValue.create(
     name: '64inch',
     product_option_id: opOne.id
@@ -101,15 +91,6 @@ opValFive = ProductOptionValue.create(
     product_option_id: opTwo.id
 )
 
-# opValSix = ProductOptionValue.create(
-#     name: '64gb',
-#     product_option_id: opThree.id
-# )
-
-# opValSeven = ProductOptionValue.create(
-#     name: '32gb',
-#     product_option_id: opFour.id
-# )
 
 skuOne = Sku.create(
     name: 'sony tv 64inch',
@@ -119,21 +100,6 @@ skuOne = Sku.create(
     product_option_value_id: opValOne.id,
 )
 
-# skuTwo = Sku.create(
-#     name: 'usb drive 64gb',
-#     price: 25.00,
-#     product_id: usbOne.id,
-#     product_option_id: opThree.id,
-#     product_option_value_id: opValSix.id,
-# )
-
-# skuThree = Sku.create(
-#     name: 'usb drive 32gb glyph',
-#     price: 15.00,
-#     product_id: usbTwo.id,
-#     product_option_id: opFour.id,
-#     product_option_value_id: opValSeven.id,
-# )
 
 orderOne = Order.create(
     user_id: jd.id
@@ -172,24 +138,38 @@ ProductOrder.create(
     # create product_option: 'size'
     # create product_option_value: 19, 22, 28
 
-# harddrive
-# for each product:
-    # create product_option: 'storage'
-    # create product_option_value: 250gb, 500gb, 1tb
+
 harddrive_array = [ usbOne, usbTwo]
 
 def create_harddrive_options(product_array) 
-    option_values = [ "250gb", "500gb", "1tb"]
+    option_values = [
+        {
+            size: "250gb",
+            price: 25.00
+        },
+        {
+            size: "500gb",
+            price: 35.00
+        }
+    ] 
+    
     product_array.each do |product|
         option = ProductOption.create(
             name: "storage",
             product_id: product.id
         )
         option_values.each do |value|
-            ProductOptionValue.create(
-                name: value,
+            option_value = ProductOptionValue.create(
+                name: value[:size],
                 product_option_id: option.id
             )
+            Sku.create(
+                name: "#{product.brand} #{product.name} #{option_value.name}",
+                price: value[:price],
+                product_id: product.id,
+                product_option_id: option.id,
+                product_option_value_id: option_value.id,
+                )
         end
     end
 end 
