@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_08_184133) do
+ActiveRecord::Schema.define(version: 2020_11_08_191432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_11_08_184133) do
     t.bigint "sku_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "quantity"
     t.index ["order_id"], name: "index_product_orders_on_order_id"
     t.index ["sku_id"], name: "index_product_orders_on_sku_id"
   end
@@ -58,10 +59,6 @@ ActiveRecord::Schema.define(version: 2020_11_08_184133) do
     t.string "additional_specs"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "quant_column_to_product_orders", force: :cascade do |t|
-    t.integer "quantity"
   end
 
   create_table "skus", force: :cascade do |t|
