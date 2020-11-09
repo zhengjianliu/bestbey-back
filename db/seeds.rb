@@ -7,6 +7,8 @@ ProductOption.destroy_all
 Product.destroy_all
 
 
+# ******* test user ********
+
 jd = User.create(
     username: 'jd',
     firstname: 'justin',
@@ -15,17 +17,29 @@ jd = User.create(
     email: 'jd@me.com'
 )
 
-tvOne = Product.create(
-    name: 'Class X750H Series',
-    rating: 3.5,
-    category: 'tv',
-    frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6400/6400728_sd.jpg;maxHeight=640;maxWidth=550',
-    sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6400/6400728_rd.jpg',
-    backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6400/6400728_bd.jpg',
-    brand: 'sony',
-    additional_specs: '
-    Stay entertained with this Sony 4K smart TV. The 4K HDR screen provides a crystal-clear picture that brings your favorite movies and films to life, and the Android TV operating system is intuitive and easy to use. This Sony 4K smart TV features a Bass Reflex speaker for a rich, well-defined sound.'
-)
+
+
+def create_product_options(option_values, product, option_name)
+    option = ProductOption.create(
+        name: option_name,
+        product_id: product.id
+    )
+    option_values.each do |value|
+        option_value = ProductOptionValue.create(
+            name: value[:option_value],
+            product_option_id: option.id
+        )
+        Sku.create(
+            name: "#{product.brand} #{product.name} #{option_value.name}",
+            price: value[:price],
+            product_id: product.id,
+            product_option_id: option.id,
+            product_option_value_id: option_value.id,
+            )
+    end
+end
+
+# ******** phones ********
 
 phoneOne = Product.create(
     name: 'iphone 12',
@@ -38,18 +52,178 @@ phoneOne = Product.create(
     additional_specs: '
     iPhone 12. 5G to download movies on the fly and stream high-quality video. Beautifully bright 6.1-inch Super Retina XDR display. Ceramic Shield with 4x better drop performance. Incredible low-light photography with Night mode on all cameras. Cinema-grade Dolby Vision video recording, editing, and playback. Powerful A14 Bionic chip. And new MagSafe accessories for easy attach and faster wireless charging. Let the fun begin.'
 )
+iphone12_options = [
+        {
+            option_value: "32gb",
+            price: 749.00
+        },
+        {
+            option_value: "64gb",
+            price: 799.00
+        },
+        {
+            option_value: "128gb",
+            price: 849.00
+        }
+    ]
+    create_product_options(iphone12_options, phoneOne, "storage")
+
 phoneTwo = Product.create(
     name: 'iphone 11',
-    rating: 3.1,
+    rating: 3.5,
     category: 'phone',
-    frontimg: '',
-    sideimg: '',
-    backimg: '',
+    frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6341/6341340cv11d.jpg',
+    sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6341/6341340cv12d.jpg',
+    backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6341/6341340cv13d.jpg',
     brand: 'apple',
-    additional_specs: 'different apple stuff a whole bunch of stuff about apples, not pears'
+    additional_specs:
+    'Shoot 4K videos, beautiful portraits, and sweeping landscapes with the all-new dual-camera system. Capture your best low-light photos with Night mode. See true-to-life color in your photos, videos, and games on the 6.1-inch Liquid Retina display. Experience unprecedented performance with A13 Bionic for gaming, augmented reality (AR), and photography. Do more and charge less with all-day battery life. And worry less with water resistance up to 2 meters for 30 minutes.'
 )
+iphone11_options = [
+        {
+            option_value: "64gb",
+            price: 599.00
+        },
+        {
+            option_value: "128gb",
+            price: 649.00
+        }
+    ]
+    create_product_options(iphone11_options, phoneTwo, "storage")
 
-usbOne = Product.create(
+phoneThree = Product.create(
+    name: 'Galaxy S20 FE 5G',
+    rating: 3.25,
+    category: 'phone',
+    frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6426/6426276_sd.jpg;maxHeight=640;maxWidth=550',
+    sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6426/6426276cv15d.jpg',
+    backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6426/6426276cv13d.jpg',
+    brand: 'samsung',
+    additional_specs:
+    'The standout in the crowd, the one with relentless passion. The one that stays true to yourself and connected to those around you. You deserve a phone that delivers industry-leading tech and allows you to express yourself in way you choose. With bold color options, pro-grade camera, 120Hz display and an all-day intelligent battery¹ that charges up in minutes², the Galaxy S20 FE 5G delivers uncompromised innovation. This is unexpected. ¹Based on average battery life under typical usage conditions. Average expected performance based on typical use. Actual battery life depends on factors such as network, features selected, frequency of calls, and voice, data, and other application usage patterns. Results may vary. ²When using 25W charger, sold separately.'
+)
+phoneThree_options = [
+        {
+            option_value: "64gb",
+            price: 499.00
+        },
+        {
+            option_value: "128gb",
+            price: 549.00
+        }
+    ]
+create_product_options(phoneThree_options, phoneThree, "storage")
+
+phoneFour = Product.create(
+    name: 'Galaxy Note20 Ultra 5G',
+    rating: 3.75,
+    category: 'phone',
+    frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6420/6420842_sd.jpg',
+    sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6420/6420842ld.jpg',
+    backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6420/6420842cv19d.jpg',
+    brand: 'samsung',
+    additional_specs:
+    "The power to work. The power to play. This isn't the time to slow down, this is the time to forge ahead and take the opportunities that come your way. You don’t need a smartphone. You need a power phone. One as beautiful as it is intelligent with a pen that is mightier, a battery that doesn't leave you hanging and is as well-connected as you. Samsung Galaxy Note20 Ultra 5G Unlocked takes power to the next level with cutting-edge technology, letting you master whatever you choose to do next."
+)
+phoneFour_options = [
+        {
+            option_value: "128gb",
+            price: 1049.99
+        },
+        {
+            option_value: "512gb",
+            price: 1199.99
+        }
+    ]
+create_product_options(phoneFour_options, phoneFour, "storage")
+
+# ********** tvs ***********
+
+
+tvOne = Product.create(
+    name: 'Class X750H Series',
+    rating: 3.5,
+    category: 'tv',
+    frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6400/6400728_sd.jpg;maxHeight=640;maxWidth=550',
+    sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6400/6400728_rd.jpg',
+    backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6400/6400728_bd.jpg',
+    brand: 'Sony',
+    additional_specs: '
+    Stay entertained with this Sony 4K smart TV. The 4K HDR screen provides a crystal-clear picture that brings your favorite movies and films to life, and the Android TV operating system is intuitive and easy to use. This Sony 4K smart TV features a Bass Reflex speaker for a rich, well-defined sound.'
+)
+tvOne_options = [
+        {
+            option_value: '43"',
+            price: 499.00
+        },
+        {
+            option_value: '55"',
+            price: 549.00
+        },
+        {
+            option_value: '65"',
+            price: 629.00
+        }
+    ]
+create_product_options(tvOne_options, tvOne, "size" )
+
+tvTwo = Product.create(
+    name: 'Class UN7000 Series LED 4K UHD Smart webOS TV',
+    rating: 3.5,
+    category: 'tv',
+    frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6417/6417302_sd.jpg',
+    sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6417/6417302cv13d.jpg',
+    backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6417/6417302cv16d.jpg',
+    brand: 'LG',
+    additional_specs:
+    'LG UHD TV is your ticket to a stunning picture. Get easy access to new and popular apps like Disney+, the Apple TV app, Sling and more. Elevate entertainment with surround sound, auto picture settings of Filmmaker Mode™ and convenient updates of Sports Alert.'
+)
+tvTwo_options = [
+        {
+            option_value: '43"',
+            price: 249.99
+        },
+        {
+            option_value: '50"',
+            price: 299.99
+        },
+        {
+            option_value: '65"',
+            price: 499.99
+        }
+    ]
+create_product_options(tvTwo_options, tvTwo, "size" )
+
+tvThree = Product.create(
+    name: 'Class 4 Series LED 4K UHD Smart Android TV',
+    rating: 2.75,
+    category: 'tv',
+    frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6422/6422761_sd.jpg',
+    sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6422/6422761ld.jpg',
+    backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6422/6422761cv11d.jpg',
+    brand: 'TCL',
+    additional_specs:
+    'The 4-Series 4K TCL Android TV delivers stunning Ultra HD picture quality with four times the resolution of Full HD for enhanced clarity and detail, as well as endless entertainment with thousands of streaming apps. Watch your entertainment favorites in one place, with seamless access to over 700,000 movies and TV episodes, your cable box, gaming console, and other devices—all from a simple, speedy home screen. Enjoy entertainment, get answers, and control devices around your home using the built-in Google Assistant. Plus, with Chromecast built-in, you can easily cast movies, shows, and photos from your Android or iOS device to your TCL Android TV. Connect all your favorite devices with the multiple HDMI inputs. Cord cutters can access free, over-the-air HD content with the built-in tuner or watch live TV from popular cable-replacement services like YouTube TV, Sling, Hulu and more.'
+)
+tvThree_options = [
+        {
+            option_value: '50"',
+            price: 229.99
+        },
+        {
+            option_value: '55"',
+            price: 249.99
+        },
+        {
+            option_value: '75"',
+            price: 799.99
+        }
+    ]
+create_product_options(tvThree_options, tvThree, "size" )
+
+# ******** accessories *********
+
+harddriveOne = Product.create(
     name: 'easystore External USB 3.0 Portable Hard Drive - Black',
     rating: 2.5,
     category: 'accessory',
@@ -59,178 +233,28 @@ usbOne = Product.create(
     brand: 'WD',
     additional_specs: 'harddrive stuff about harddrives or something'
 )
+harddriveOne_options = [
+        {
+            option_value: "1tb",
+            price: 49.99
+        },
+        {
+            option_value: "2tb",
+            price: 62.99
+        }
+    ]
+create_product_options(harddriveOne_options, harddriveOne, "storage")
 
-# usbTwo = Product.create(
-#     name: 'usb drive',
-#     rating: 4.0,
-#     category: 'accessory',
-#     frontimg: '',
-#     sideimg: '',
-#     backimg: '',
-#     brand: 'glyph',
-#     additional_specs: 'other harddrive stuff about harddrives or glyphs something'
-# )
-
-# opOne = ProductOption.create(
-#     name: 'size',
-#     product_id: tvOne.id
-# )
-
-# opValOne = ProductOptionValue.create(
-#     name: '64inch',
-#     product_option_id: opOne.id
-# )
-
-# opValTwo = ProductOptionValue.create(
-#     name: '50inch',
-#     product_option_id: opOne.id
-# )
-
-
-# skuOne = Sku.create(
-#     name: 'sony tv 64inch',
-#     price: 899.99,
-#     product_id: tvOne.id,
-#     product_option_id: opOne.id,
-#     product_option_value_id: opValOne.id,
-# )
-
-
+# ***** test user case below *******
+#
+# skuOne = Sku.all.find { |sku| sku.name == 'sony Class X750H Series 43"'}
+#
 # orderOne = Order.create(
 #     user_id: jd.id
 # )
 
 # ProductOrder.create(
 #     sku_id: skuOne.id,
-#     order_id: orderOne.id
+#     order_id: orderOne.id,
+#     quantity: 2
 # )
-
-# tablets
-# for each tablet product:
-    #   create product_option: 'storage'
-    #   create product_option_values for [132, 256, 512]
-
-# computer
-# for each computer :
-    #   create product_option: 'storage'
-    #   create product_option_values for [300gb, 500gb, 1tb]
-
-# monitor
-# for each monitor product:
-    # create product_option: 'size'
-    # create product_option_value: 19, 22, 28
-
-def create_phones()
-    phones = Product.all.select{ |product| product.category == "phone"}
-    option_values = [
-        {
-            size: "32gb",
-            price: 749.00
-        },
-        {
-            size: "64gb",
-            price: 799.00
-        },
-        {
-            size: "128gb",
-            price: 849.00
-        }
-    ]
-
-    phones.each do |product|
-        option = ProductOption.create(
-            name: "storage",
-            product_id: product.id
-        )
-        option_values.each do |value|
-            option_value = ProductOptionValue.create(
-                name: value[:size],
-                product_option_id: option.id
-            )
-            Sku.create(
-                name: "#{product.brand} #{product.name} #{option_value.name}",
-                price: value[:price],
-                product_id: product.id,
-                product_option_id: option.id,
-                product_option_value_id: option_value.id,
-                )
-        end
-    end
-end
-
-def create_tvs()
-    tvs = Product.all.select{ |product| product.category == "tv"}
-    option_values = [
-        {
-            size: '43"',
-            price: 499.00
-        },
-        {
-            size: '55"',
-            price: 549.00
-        },
-        {
-            size: '65"',
-            price: 629.00
-        }
-    ]
-
-    tvs.each do |product|
-        option = ProductOption.create(
-            name: "size",
-            product_id: product.id
-        )
-        option_values.each do |value|
-            option_value = ProductOptionValue.create(
-                name: value[:size],
-                product_option_id: option.id
-            )
-            Sku.create(
-                name: "#{product.brand} #{product.name} #{option_value.name}",
-                price: value[:price],
-                product_id: product.id,
-                product_option_id: option.id,
-                product_option_value_id: option_value.id,
-                )
-        end
-    end
-end
-
-harddrive_array = [ usbOne ]
-
-def create_harddrives(product_array)
-    option_values = [
-        {
-            size: "1tb",
-            price: 49.99
-        },
-        {
-            size: "2tb",
-            price: 62.99
-        }
-    ]
-
-    product_array.each do |product|
-        option = ProductOption.create(
-            name: "storage",
-            product_id: product.id
-        )
-        option_values.each do |value|
-            option_value = ProductOptionValue.create(
-                name: value[:size],
-                product_option_id: option.id
-            )
-            Sku.create(
-                name: "#{product.brand} #{product.name} #{option_value.name}",
-                price: value[:price],
-                product_id: product.id,
-                product_option_id: option.id,
-                product_option_value_id: option_value.id,
-                )
-        end
-    end
-end
-
-create_phones()
-create_tvs()
-create_harddrives(harddrive_array)
