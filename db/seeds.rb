@@ -394,6 +394,54 @@ smartWatchFour_options = [
     ] 
 create_product_options(smartWatchFour_options, smartWatchFour, "color")
 
+# ******* laptops **********
+
+laptopOne = Product.create(
+    name: 'Surface Laptop 3 - 15" Touch-Screen - 16GB Memory - 256GB SSD (Latest Model) - Matte Black',
+    rating: 3.9,
+    category: 'laptop',
+    frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6374/6374326cv11d.jpg',
+    sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6374/6374326_sd.jpg',
+    backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6374/6374326cv14d.jpg',
+    brand: 'Microsoft',
+    additional_specs:
+    "Make a powerful statement, and fuel your ideas with new Surface Laptop 3. Sleek and light, with improved speed, performance, typing comfort, and battery life, it travels with ease and makes every day more productive. Now two times faster than Surface Laptop 2, Surface Laptop 3 has more power, Fast Charging, greater multitasking performance, all-day battery¹, and Instant On. Bring your vision to life on the vibrant PixelSense™ display. Listen to the improved Omnisonic Speakers, now louder with a more natural sound, discreetly hidden below the keyboard."
+)
+laptopOne_options = [
+        {
+            option_value: "AMD Ryzen 5 Microsoft Surface Edition",
+            price: 1699.99
+        },
+        {
+            option_value: "AMD Ryzen 7 Microsoft Surface Edition",
+            price: 2099.99
+        }
+    ] 
+create_product_options(laptopOne_options, laptopOne, "processor")
+
+laptopTwo = Product.create(
+    name: 'Galaxy Book Flex 2-in-1 15.6" QLED Touch-Screen Laptop',
+    rating: 3.4,
+    category: 'laptop',
+    frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6398/6398415_sd.jpg;maxHeight=640;maxWidth=550',
+    sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6398/6398415ld.jpg;maxHeight=640;maxWidth=550',
+    backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6398/6398415cv1d.jpg',
+    brand: 'Samsung',
+    additional_specs:
+    "Samsung Galaxy Book Flex Convertible 2-in-1 Laptop: Stay productive with this 15.6-inch Samsung Galaxy Book Flex laptop. The Intel Iris Plus integrated graphics deliver detailed images on the Full HD touchscreen, while the 512GB SSD offers ample storage space for files and quick data access."
+)
+laptopTwo_options = [
+        {
+            option_value: "Intel 10th Generation Core i7",
+            price: 999.99
+        },
+        {
+            option_value: "Intel 10th Generation Core i5",
+            price: 849.99
+        }
+    ] 
+create_product_options(laptopTwo_options, laptopTwo, "processor")
+
 # ***** test user case below *******
 
 # skuOne = Sku.all.find { |sku| sku.name == 'sony Class X750H Series 43"'}
