@@ -246,17 +246,6 @@ harddriveOne_options = [
     ]
 create_product_options(harddriveOne_options, harddriveOne, "storage")
 
-<<<<<<< HEAD
-# ***** test user case below *******
-#
-# skuOne = Sku.all.find { |sku| sku.name == 'sony Class X750H Series 43"'}
-#
-# orderOne = Order.create(
-#     user_id: jd.id
-# )
-
-=======
-
 harddriveTwo = Product.create(
     name: 'Rugged External USB Type-C Portable Hard Drive - Orange/Silver',
     rating: 3.4,
@@ -276,7 +265,7 @@ harddriveTwo_options = [
             option_value: "5tb",
             price: 169.99
         }
-    ] 
+    ]
 create_product_options(harddriveTwo_options, harddriveTwo, "storage")
 
 
@@ -307,7 +296,7 @@ harddriveThree_options = [
             option_value: "4tb",
             price: 97.49
         }
-    ] 
+    ]
 create_product_options(harddriveThree_options, harddriveThree, "storage")
 
 # ******** Smart Watches ***********
@@ -331,7 +320,7 @@ smartWatchOne_options = [
             option_value: "44mm",
             price: 309.00
         }
-    ] 
+    ]
 create_product_options(smartWatchOne_options, smartWatchOne, "size")
 
 smartWatchTwo = Product.create(
@@ -353,7 +342,7 @@ smartWatchTwo_options = [
             option_value: "40mm",
             price: 229.00
         }
-    ] 
+    ]
 create_product_options(smartWatchTwo_options, smartWatchTwo, "size")
 
 smartWatchThree = Product.create(
@@ -375,7 +364,7 @@ smartWatchThree_options = [
             option_value: "44mm",
             price: 199.00
         }
-    ] 
+    ]
 create_product_options(smartWatchThree_options, smartWatchThree, "size")
 
 smartWatchFour = Product.create(
@@ -401,24 +390,5 @@ smartWatchFour_options = [
             option_value: "Iron Mist",
             price: 199.95
         }
-    ] 
+    ]
 create_product_options(smartWatchFour_options, smartWatchFour, "color")
-
-# ***** test user case below *******
-
-# skuOne = Sku.all.find { |sku| sku.name == 'sony Class X750H Series 43"'}
-
-# orderOne = Order.create(
-#     user_id: jd.id
-# )
-
->>>>>>> 1949f8405331473bff28c5767f46446d8b534444
-# ProductOrder.create(
-#     sku_id: skuOne.id,
-#     order_id: orderOne.id,
-#     quantity: 2
-<<<<<<< HEAD
-# )
-=======
-# )
->>>>>>> 1949f8405331473bff28c5767f46446d8b534444
