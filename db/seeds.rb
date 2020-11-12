@@ -1,10 +1,10 @@
 ProductOrder.destroy_all
 Order.destroy_all
 User.destroy_all
-Sku.destroy_all 
-ProductOptionValue.destroy_all 
-ProductOption.destroy_all 
-Product.destroy_all 
+Sku.destroy_all
+ProductOptionValue.destroy_all
+ProductOption.destroy_all
+Product.destroy_all
 
 
 # ******* test user ********
@@ -19,7 +19,7 @@ jd = User.create(
 
 
 
-def create_product_options(option_values, product, option_name) 
+def create_product_options(option_values, product, option_name)
     option = ProductOption.create(
         name: option_name,
         product_id: product.id
@@ -37,7 +37,7 @@ def create_product_options(option_values, product, option_name)
             product_option_value_id: option_value.id,
             )
     end
-end 
+end
 
 # ******** phones ********
 
@@ -65,7 +65,7 @@ iphone12_options = [
             option_value: "128gb",
             price: 849.00
         }
-    ] 
+    ]
     create_product_options(iphone12_options, phoneOne, "storage")
 
 phoneTwo = Product.create(
@@ -76,7 +76,7 @@ phoneTwo = Product.create(
     sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6341/6341340cv12d.jpg',
     backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6341/6341340cv13d.jpg',
     brand: 'apple',
-    additional_specs: 
+    additional_specs:
     'Shoot 4K videos, beautiful portraits, and sweeping landscapes with the all-new dual-camera system. Capture your best low-light photos with Night mode. See true-to-life color in your photos, videos, and games on the 6.1-inch Liquid Retina display. Experience unprecedented performance with A13 Bionic for gaming, augmented reality (AR), and photography. Do more and charge less with all-day battery life. And worry less with water resistance up to 2 meters for 30 minutes.'
 )
 iphone11_options = [
@@ -88,7 +88,7 @@ iphone11_options = [
             option_value: "128gb",
             price: 649.00
         }
-    ] 
+    ]
     create_product_options(iphone11_options, phoneTwo, "storage")
 
 phoneThree = Product.create(
@@ -99,7 +99,7 @@ phoneThree = Product.create(
     sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6426/6426276cv15d.jpg',
     backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6426/6426276cv13d.jpg',
     brand: 'samsung',
-    additional_specs: 
+    additional_specs:
     'The standout in the crowd, the one with relentless passion. The one that stays true to yourself and connected to those around you. You deserve a phone that delivers industry-leading tech and allows you to express yourself in way you choose. With bold color options, pro-grade camera, 120Hz display and an all-day intelligent battery¹ that charges up in minutes², the Galaxy S20 FE 5G delivers uncompromised innovation. This is unexpected. ¹Based on average battery life under typical usage conditions. Average expected performance based on typical use. Actual battery life depends on factors such as network, features selected, frequency of calls, and voice, data, and other application usage patterns. Results may vary. ²When using 25W charger, sold separately.'
 )
 phoneThree_options = [
@@ -111,7 +111,7 @@ phoneThree_options = [
             option_value: "128gb",
             price: 549.00
         }
-    ] 
+    ]
 create_product_options(phoneThree_options, phoneThree, "storage")
 
 phoneFour = Product.create(
@@ -122,7 +122,7 @@ phoneFour = Product.create(
     sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6420/6420842ld.jpg',
     backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6420/6420842cv19d.jpg',
     brand: 'samsung',
-    additional_specs: 
+    additional_specs:
     "The power to work. The power to play. This isn't the time to slow down, this is the time to forge ahead and take the opportunities that come your way. You don’t need a smartphone. You need a power phone. One as beautiful as it is intelligent with a pen that is mightier, a battery that doesn't leave you hanging and is as well-connected as you. Samsung Galaxy Note20 Ultra 5G Unlocked takes power to the next level with cutting-edge technology, letting you master whatever you choose to do next."
 )
 phoneFour_options = [
@@ -134,7 +134,7 @@ phoneFour_options = [
             option_value: "512gb",
             price: 1199.99
         }
-    ] 
+    ]
 create_product_options(phoneFour_options, phoneFour, "storage")
 
 # ********** tvs ***********
@@ -164,7 +164,7 @@ tvOne_options = [
             option_value: '65"',
             price: 629.00
         }
-    ] 
+    ]
 create_product_options(tvOne_options, tvOne, "size" )
 
 tvTwo = Product.create(
@@ -175,7 +175,7 @@ tvTwo = Product.create(
     sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6417/6417302cv13d.jpg',
     backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6417/6417302cv16d.jpg',
     brand: 'LG',
-    additional_specs: 
+    additional_specs:
     'LG UHD TV is your ticket to a stunning picture. Get easy access to new and popular apps like Disney+, the Apple TV app, Sling and more. Elevate entertainment with surround sound, auto picture settings of Filmmaker Mode™ and convenient updates of Sports Alert.'
 )
 tvTwo_options = [
@@ -191,7 +191,7 @@ tvTwo_options = [
             option_value: '65"',
             price: 499.99
         }
-    ] 
+    ]
 create_product_options(tvTwo_options, tvTwo, "size" )
 
 tvThree = Product.create(
@@ -202,7 +202,7 @@ tvThree = Product.create(
     sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6422/6422761ld.jpg',
     backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6422/6422761cv11d.jpg',
     brand: 'TCL',
-    additional_specs: 
+    additional_specs:
     'The 4-Series 4K TCL Android TV delivers stunning Ultra HD picture quality with four times the resolution of Full HD for enhanced clarity and detail, as well as endless entertainment with thousands of streaming apps. Watch your entertainment favorites in one place, with seamless access to over 700,000 movies and TV episodes, your cable box, gaming console, and other devices—all from a simple, speedy home screen. Enjoy entertainment, get answers, and control devices around your home using the built-in Google Assistant. Plus, with Chromecast built-in, you can easily cast movies, shows, and photos from your Android or iOS device to your TCL Android TV. Connect all your favorite devices with the multiple HDMI inputs. Cord cutters can access free, over-the-air HD content with the built-in tuner or watch live TV from popular cable-replacement services like YouTube TV, Sling, Hulu and more.'
 )
 tvThree_options = [
@@ -218,7 +218,7 @@ tvThree_options = [
             option_value: '75"',
             price: 799.99
         }
-    ] 
+    ]
 create_product_options(tvThree_options, tvThree, "size" )
 
 # ******** accessories *********
@@ -243,9 +243,8 @@ harddriveOne_options = [
             option_value: "2tb",
             price: 62.99
         }
-    ] 
+    ]
 create_product_options(harddriveOne_options, harddriveOne, "storage")
-
 
 harddriveTwo = Product.create(
     name: 'Rugged External USB Type-C Portable Hard Drive - Orange/Silver',
@@ -266,7 +265,7 @@ harddriveTwo_options = [
             option_value: "5tb",
             price: 169.99
         }
-    ] 
+    ]
 create_product_options(harddriveTwo_options, harddriveTwo, "storage")
 
 
@@ -297,7 +296,7 @@ harddriveThree_options = [
             option_value: "4tb",
             price: 97.49
         }
-    ] 
+    ]
 create_product_options(harddriveThree_options, harddriveThree, "storage")
 
 # ******** Smart Watches ***********
@@ -321,7 +320,7 @@ smartWatchOne_options = [
             option_value: "44mm",
             price: 309.00
         }
-    ] 
+    ]
 create_product_options(smartWatchOne_options, smartWatchOne, "size")
 
 smartWatchTwo = Product.create(
@@ -343,7 +342,7 @@ smartWatchTwo_options = [
             option_value: "40mm",
             price: 229.00
         }
-    ] 
+    ]
 create_product_options(smartWatchTwo_options, smartWatchTwo, "size")
 
 smartWatchThree = Product.create(
@@ -365,7 +364,7 @@ smartWatchThree_options = [
             option_value: "44mm",
             price: 199.00
         }
-    ] 
+    ]
 create_product_options(smartWatchThree_options, smartWatchThree, "size")
 
 smartWatchFour = Product.create(
@@ -391,8 +390,138 @@ smartWatchFour_options = [
             option_value: "Iron Mist",
             price: 199.95
         }
-    ] 
+    ]
 create_product_options(smartWatchFour_options, smartWatchFour, "color")
+
+
+#********Tablets**********#
+
+tabletOne = Product.create(
+    name: 'iPad Pro 11 Inch',
+    rating: 4.5,
+    category: 'tablet',
+    frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/3756/3756005_sd.jpg;maxHeight=640;maxWidth=550',
+    sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/3756/3756005cv13d.jpg;maxHeight=640;maxWidth=550',
+    backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/3756/3756005cv11d.jpg;maxHeight=640;maxWidth=550',
+    brand: 'apple',
+    additional_specs:'Camera, Photos, Messages, FaceTime, Mail, Music, Safari, Maps, Siri, Calendar, iTunes Store, App Store, Notes, Voice Memos, Contacts, Books, Home, Reminders, Stocks, Clock, TV, News, Photo Booth, Podcasts and more'
+)
+tabletOne_options = [
+        {
+            option_value: "128gb",
+            price: 749.99
+        },
+        {
+            option_value: "256gb",
+            price: 849.99
+        },
+        {
+            option_value: "512gb",
+            price: 1049.99
+        }
+    ]
+    create_product_options(tabletOne_options, tabletOne, "storage")
+
+
+    tabletTwo = Product.create(
+        name: 'iPad Air',
+        rating: 4.5,
+        category: 'tablet',
+        frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5985/5985617_sd.jpg;maxHeight=640;maxWidth=550',
+        sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5985/5985617cv11d.jpg;maxHeight=640;maxWidth=550',
+        backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5985/5985617cv12d.jpg;maxHeight=640;maxWidth=550',
+        brand: 'apple',
+        additional_specs:'Camera, Photos, Messages, FaceTime, Mail, Music, Safari, Maps, Siri, Calendar, iTunes USB-C Charge Cable (1 meter), 20W USB-C Power Adapter, Contacts, Books, Home, Reminders, Stocks, Clock, TV, News, Photo Booth, Podcasts and more'
+    )
+    tabletTwo_options = [
+            {
+                option_value: "64gb",
+                price: 599.99
+            },
+            {
+                option_value: "128gb",
+                price: 749.99
+            }
+        ]
+        create_product_options(tabletTwo_options, tabletTwo, "storage")
+
+
+        tabletThree = Product.create(
+            name: 'Galaxy Tab S6',
+            rating: 4.2,
+            category: 'tablet',
+            frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6357/6357007_sd.jpg;maxHeight=640;maxWidth=550',
+            sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6357/6357007cv11d.jpg;maxHeight=640;maxWidth=550',
+            backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6357/6357007_bd.jpg;maxHeight=640;maxWidth=550',
+            brand: 'samsung',
+            additional_specs:'Imagine a more personal PC experience—without a PC. Meet the Galaxy Tab S6, the ultra-slim 2-in-1 that performs like a laptop with the mobility of a tablet.'
+        )
+        tabletThree_options = [
+                {
+                    option_value: "128gb",
+                    price: 399.99
+                },
+                {
+                    option_value: "256gb",
+                    price: 479.99
+                }
+            ]
+            create_product_options(tabletThree_options, tabletThree, "storage")
+
+            tabletFour = Product.create(
+                name: 'Galaxy Tab S7',
+                rating: 4.4,
+                category: 'tablet',
+                frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6423/6423329_sd.jpg;maxHeight=640;maxWidth=550',
+                sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6423/6423329cv12d.jpg;maxHeight=640;maxWidth=550',
+                backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6423/6423329cv14d.jpg;maxHeight=640;maxWidth=550',
+                brand: 'samsung',
+                additional_specs:'Get more done with DeX. Instantly transform your tablet into a PC experience with the optional, redesigned keyboard attachment, which includes a larger trackpad and shortcut and function keys. Navigate with ease, switching between multiple windows and programs while you work with the redesigned S Pen. With a CPU that’s 30% faster and with up to 512GB of memory, get the power and the capacity to achieve more from anywhere.'
+            )
+            tabletFour_options = [
+                    {
+                        option_value: "128gb",
+                        price: 649.99
+                    },
+                    {
+                        option_value: "256gb",
+                        price: 729.99
+                    },
+                    {
+                      option_value: "512gb",
+                      price: 829.99
+                    }
+                ]
+                create_product_options(tabletFour_options, tabletFour, "storage")
+
+              tabletFive = Product.create(
+                  name: 'Surface Pro 7',
+                  rating: 4.0,
+                  category: 'tablet',
+                  frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6374/6374987_sd.jpg;maxHeight=640;maxWidth=550',
+                  sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6374/6374987cv12d.jpg;maxHeight=640;maxWidth=550',
+                  backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6374/6374987cv13d.jpg;maxHeight=640;maxWidth=550',
+                  brand: 'microsoft',
+                  additional_specs:'Work and play your way virtually anywhere. With laptop-to-tablet versatility, plus better connectivity with USB-C™ and USB-A ports, ultra-slim and light Surface Pro 7 adapts to you.'
+              )
+              tabletFive_options = [
+                      {
+                          option_value: "128gb",
+                          price: 799.99
+                      },
+                      {
+                          option_value: "256gb",
+                          price: 899.99
+                      },
+                      {
+                        option_value: "512gb",
+                        price: 999.99
+                      }
+                  ]
+                  create_product_options(tabletFive_options, tabletFive, "storage")
+
+
+
 
 # ******* laptops **********
 
@@ -416,7 +545,7 @@ laptopOne_options = [
             option_value: "AMD Ryzen 7 Microsoft Surface Edition",
             price: 2099.99
         }
-    ] 
+    ]
 create_product_options(laptopOne_options, laptopOne, "processor")
 
 laptopTwo = Product.create(
@@ -439,7 +568,7 @@ laptopTwo_options = [
             option_value: "Intel 10th Generation Core i5",
             price: 849.99
         }
-    ] 
+    ]
 create_product_options(laptopTwo_options, laptopTwo, "processor")
 
 # ***** test user case below *******

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     def index
         users = User.all
 
-        render json: users 
+        render json: users
     end
 
     def show
@@ -12,15 +12,12 @@ class UsersController < ApplicationController
         render json: user
     end
 
-    def create 
-        user = User.create(user_params)
+    def create
+      user = User.create(user_params)
+      render json: user
+    end
 
-        render json: user
-    end 
-
-    private 
-
-    def user_params 
-        params.require(:user).permit!
-    end 
+    def user_params
+      params.require(:user).permit!
+    end
 end
