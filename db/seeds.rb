@@ -571,6 +571,52 @@ laptopTwo_options = [
     ]
 create_product_options(laptopTwo_options, laptopTwo, "processor")
 
+laptopThree = Product.create(
+    name: 'MacBook Pro 13.3" Laptop - Apple M1 chip - 8GB Memory ',
+    rating: 3.9,
+    category: 'laptop',
+    frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6418/6418602_sd.jpg;maxHeight=640;maxWidth=550',
+    sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6418/6418602cv11d.jpg;maxHeight=640;maxWidth=550',
+    backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6418/6418602cv13d.jpg;maxHeight=640;maxWidth=550',
+    brand: 'Apple',
+    additional_specs:
+    "The Apple M1 chip redefines the 13-inch MacBook Pro. Featuring an 8-core CPU that flies through complex workflows in photography, coding, video editing, and more. Incredible 8-core GPU that crushes graphics-intensive tasks and enables super-smooth gaming. An advanced 16-core Neural Engine for more machine learning power in your favorite apps. Superfast unified memory for fluid performance. And the longest-ever battery life in a Mac at up to 20 hours.² It’s Apple's most popular pro notebook. Way more performance and way more pro."
+)
+laptopThree_options = [
+        {
+            option_value: "256gb",
+            price: 1299.99
+        },
+        {
+            option_value: "512gb",
+            price: 1499.99
+        }
+    ] 
+create_product_options(laptopThree_options, laptopThree, "storage")
+
+laptopFour = Product.create(
+    name: 'MacBook Air 13.3" Laptop with Touch ID - Intel Core i3 - 8GB Memory',
+    rating: 3.9,
+    category: 'laptop',
+    frontimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6366/6366606_sd.jpg;maxHeight=640;maxWidth=550',
+    sideimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6366/6366606cv11d.jpg;maxHeight=640;maxWidth=550',
+    backimg: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6366/6366606cv12d.jpg;maxHeight=640;maxWidth=550',
+    brand: 'Apple',
+    additional_specs:
+    "Available in silver, space gray, and gold, the latest MacBook Air features a stunning Retina display with True Tone technology, Touch ID, a backlit Magic Keyboard, and a Force Touch trackpad - all housed in a thin and light iconic wedge design made from 100 percent recycled aluminum.² And with 11-hour battery life, it's a do-it-all notebook that goes all day long."
+)
+laptopFour_options = [
+        {
+            option_value: "256gb",
+            price: 999.99
+        },
+        {
+            option_value: "512gb",
+            price: 1299.99
+        }
+    ] 
+create_product_options(laptopFour_options, laptopFour, "storage")
+
 # ***** test user case below *******
 
 # skuOne = Sku.all.find { |sku| sku.name == 'sony Class X750H Series 43"'}
