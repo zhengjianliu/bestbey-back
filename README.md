@@ -1,25 +1,26 @@
-# README
+<h1 align="center" color="lightgrey">Welcome to Best Bey</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+> A React / Redux / Ruby on Rails eCommerce store that brings you superior quality in electronics.
 
-* Ruby version
 
-* System dependencies
+### 🏠 [LiveDemo](https://bestbey.netlify.app/) | [Frontend](https://github.com/zhengjianliu/bestbey) | [Backend](https://github.com/zhengjianliu/bestbey-back)
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+## Author
 
-* How to run the test suite
+👤 **ZHENGJIAN(JAY) LIU**
 
-* Services (job queues, cache servers, search engines, etc.)
+-   Github: [@ZHENGJIANLIU](https://github.com/zhengjianliu)
+-   Linkedin [@Linkedin](https://www.linkedin.com/in/zhengjian-jay-liu-33776553/)
+-   Website [@Website](https://www.zhengjianliu.com)
 
-* Deployment instructions
+👤 **JD Brewer-Hofmann**
 
-* ...
-# bestbey-back
+
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
